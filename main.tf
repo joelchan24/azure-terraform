@@ -1,5 +1,5 @@
 data "azurerm_resource_group" "joel-chan" {
-  name = "joel-chan"
+  name = "heber-cervantes"
 }
 
 resource "azurerm_virtual_network" "test-network" {

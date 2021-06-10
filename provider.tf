@@ -1,15 +1,8 @@
-# Azure Provider source and version being used
-terraform {
-  required_providers {
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "=2.46.0"
-    }
-  }
-}
-
-#Configure the Microsoft Azure Provider
 provider "azurerm" {
-  features {}
-}
+  version = "=1.30.1"
 
+  tenant_id       = "${var.tenant_id}"
+  subscription_id = "${var.subscription_id}"
+  client_id       = "${var.agent_client_id}"
+  client_secret   = "${var.agent_client_secret}"
+}

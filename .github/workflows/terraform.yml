@@ -9,15 +9,15 @@ jobs:
   runs-on: ubuntu-latest
   steps:
     - name: "Checkout"
-      uses: actions/checkout@master
+    uses: actions/checkout@master
     - name: "Terraform Plan"
-      uses: hashicorp/terraform-github-actions@master
-      tf_actions_subcommand: "plan"
-      tf_actions_working_dir: "./terraform"
-      tf_actions_comment: true
-  env:
-    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    TF_VAR_agent_client_id: ${{ secrets.TF_VAR_agent_client_id }}
-    TF_VAR_agent_client_secret: ${{secrets.TF_VAR_agent_client_secret }}
-    TF_VAR_subscription_id: ${{ secrets.TF_VAR_subscription_id }}
-    TF_VAR_tenant_id: ${{ secrets.TF_VAR_tenant_id }}
+    uses: hashicorp/terraform-github-actions@master
+    tf_actions_subcommand: "plan"
+    tf_actions_working_dir: "./terraform"
+    tf_actions_comment: true
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      TF_VAR_agent_client_id: ${{ secrets.TF_VAR_agent_client_id }}
+      TF_VAR_agent_client_secret: ${{secrets.TF_VAR_agent_client_secret }}
+      TF_VAR_subscription_id: ${{ secrets.TF_VAR_subscription_id }}
+      TF_VAR_tenant_id: ${{ secrets.TF_VAR_tenant_id }}
